@@ -12,7 +12,7 @@ public class CharacterTest {
 	Character underTest;
 	@Before
 	public void initalize() {
-		underTest = new Character(0,0,0,0,0,0);
+		underTest = new Character(null);
 	}
 	
 	@Test
@@ -24,8 +24,7 @@ public class CharacterTest {
 	
 	@Test
 	public void numberShouldBeBetween1And18Inclusive() {
-		underTest.generateStat();
-		int underTestStat = underTest.getStat();
+		int underTestStat = underTest.generateStat();
 		statAssertion(underTestStat);
 	}
 	
