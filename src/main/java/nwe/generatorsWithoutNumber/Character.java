@@ -1,92 +1,71 @@
 package nwe.generatorsWithoutNumber;
 
+import java.util.ArrayList;
+
 public class Character {
-	private int strength;
-	private	int dexterity;
-	private int constitution;
-	private int intelligence;
-	private int wisdom;
-	private int charisma;
-	private int stat;
-	
-	public Character(int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma) {
-		this.strength = strength;
-		this.dexterity = dexterity;
-		this.constitution = constitution;
-		this.intelligence = intelligence;
-		this.wisdom = wisdom;
-		this.charisma = charisma;
+
+	ArrayList<Integer> stats = new ArrayList<>();
+
+	public Character(ArrayList<Integer> stats) {
+		this.stats = stats;
 	}
 
 	public int getStrength() {
-		return strength;
+		return stats.get(0);
 	}
 
 	public int getDexterity() {
-		return dexterity;
+		return stats.get(1);
 	}
 
 	public int getConstitution() {
-		return constitution;
+		return stats.get(2);
 	}
 
 	public int getIntelligence() {
-		return intelligence;
+		return stats.get(3);
 	}
 
 	public int getWisdom() {
-		return wisdom;
+		return stats.get(4);
 	}
 
 	public int getCharisma() {
-		return charisma;
-	}
-	
-	public int getStat() {
-		return stat;
+		return stats.get(5);
 	}
 
-	public void generateStat() {
-		stat = (rollD6() + rollD6() + rollD6());
+	public int generateStat() {
+		return (rollD6() + rollD6() + rollD6());
 	}
 
 	public int rollD6() {
-		int roll = ((int)(Math.random() * ((6 - 1) + 1)) + 1);
+		int roll = ((int) (Math.random() * ((6 - 1) + 1)) + 1);
 		return roll;
-		
+
 	}
 
 	public void generateStrength() {
-		generateStat();
-		strength = stat;
+		stats.add(0, generateStat());
 	}
 
 	public void generateDexterity() {
-		generateStat();
-		dexterity = stat;
+		stats.add(1, generateStat());
 	}
 
 	public void generateConstitution() {
-		generateStat();
-		constitution = stat;		
+		stats.add(2, generateStat());
 	}
-	
+
 	public void generateIntelligence() {
-		generateStat();
-		intelligence = stat;
+		stats.add(3, generateStat());
 	}
+
 	public void generateWisdom() {
-		generateStat();
-		wisdom = stat;
+		stats.add(4, generateStat());
 	}
+
 	public void generateCharisma() {
-		generateStat();
-		charisma = stat;
+		stats.add(5, generateStat());
 	}
-	
-	
-	
-	
-	
 
 }
