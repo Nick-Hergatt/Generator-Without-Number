@@ -1,4 +1,4 @@
-package nwe.generatorsWithoutNumber;
+package utility;
 
 public class Dice {
 	int roll = 0;

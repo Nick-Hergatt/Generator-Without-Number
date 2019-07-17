@@ -1,10 +1,12 @@
-package nwe.generatorsWithoutNumber;
+package utility;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.greaterThanOrEqualTo;
 import static org.hamcrest.Matchers.lessThanOrEqualTo;
 
 import org.junit.Test;
+
+import utility.Dice;
 
 public class DiceTest {
 	Dice underTest = new Dice();
