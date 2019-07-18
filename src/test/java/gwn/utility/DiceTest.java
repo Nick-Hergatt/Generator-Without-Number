@@ -1,12 +1,20 @@
-package utility;
+package gwn.utility;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.greaterThanOrEqualTo;
 import static org.hamcrest.Matchers.lessThanOrEqualTo;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-public class DiceRollerTest {
+public class DiceTest {
+
+	@Test
+	public void shouldThrowExceptionForInvalidDiceString()
+		{
+		int result = Dice.roll("this is an invalid string");
+		assertEquals(-1, result);
+		}
 
 	@Test
 	public void shouldRoll2d4()
@@ -14,10 +22,10 @@ public class DiceRollerTest {
 		// Arrange
 		int diceCount = 2;
 		int sidesPerDie = 4;
-		String diceToRoll = diceCount + DiceRoller.DICE_TOKENIZER + sidesPerDie;
+		String diceToRoll = diceCount + Dice.DICE_TOKENIZER + sidesPerDie;
 
 		// Action
-		int result = DiceRoller.roll(diceToRoll);
+		int result = Dice.roll(diceToRoll);
 		System.out.println(diceToRoll + " = " + result);
 
 		// Assert

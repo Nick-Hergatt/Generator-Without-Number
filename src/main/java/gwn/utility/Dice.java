@@ -1,14 +1,14 @@
-package utility;
+package gwn.utility;
 
 import java.util.Random;
 
-public class DiceRoller {
+public class Dice {
 
 	public static final String DICE_TOKENIZER = "d";
 
 	private static Random random = new Random(System.nanoTime());
 
-	private DiceRoller()
+	private Dice()
 		{
 		}
 
